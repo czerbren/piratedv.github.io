@@ -5,12 +5,16 @@ layout: default
 	<h1><b>Hope your having a great day!</b></h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat soluta saepe earum hic reprehenderit labore sunt tempora, suscipit, quaerat sint, asperiores distinctio repellendus optio atque sequi corrupti! Accusamus, maiores, ex.</p>
 	<input id="amount"  type="number" placeholder="Type an amount" id="amount"><br>
-	<a id="send" alt="Send Via Paypal" href="#" class="button button-outline"><img src="https://camo.githubusercontent.com/88af8b965f9840a3236e9047c40e1755d4eeb3b8/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f70617970616c2e737667" alt="" class="input-icon"></a>
+	<a id="send" alt="Send Via Paypal" class="button button-outline"><img src="https://camo.githubusercontent.com/88af8b965f9840a3236e9047c40e1755d4eeb3b8/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f70617970616c2e737667" alt="" class="input-icon"></a>
 </section>
 
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
-    document.querySelector('#amount').addEventListener('change', function() {
+	if (window.location.hash) {
+		document.querySelector('#amount').value = window.location.hash.replace('#', '')
+	}
+
+    document.querySelector('#send').addEventListener('click', function() {
     	document.querySelector("#send").href = "https://paypal.me/kristofferp21/usd" + document.querySelector('#amount').value
     })
 });

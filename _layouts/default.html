@@ -13,8 +13,8 @@
 			<header class="header" id="home">
 				<section class="container">
 					<h1 class="title"><b><a href="/"><span>{{site.title}}</span></a></b></h1>
-					<p>#employed</p>
-					<p class="description"><a href="#">{{site.email}}</a></p>
+					<p>The best. Pro player 2018. ROS Grand Master. I kill NOAH. 4564161 Win 0 Death</p>
+					<p class="description"><a href="https://facebook.com/kenneth.carillo.564">https://facebook.com/kenneth.carillo.564</a></p>
 					<!-- <p class="description">A minimalist CSS framework <br><i><small>Currently v1.3.0</small></i></p>
 					<a class="button" href="#getting-started" title="Getting Started">Getting Started</a> -->
 				</section>
@@ -22,9 +22,10 @@
 			<nav class="navigation">
 				<section class="container">
 					<ul class="navigation-list">
-						<li class="navigation-item"><a class="navigation-link" href="#NaN" data-popover="">Articles</a></li>
-						<li class="navigation-item"><a class="navigation-link" href="#NaN" data-popover="">Scrapers</a></li>
-						<li class="navigation-item"><a class="navigation-link" href="#NaN" data-popover="">Message</a></li>
+						<li class="navigation-item"><a class="navigation-link" href="#NaN" data-popover="">Kills: <span id="kills"></span></a></li>
+						<li class="navigation-item"><a class="navigation-link" href="#NaN" data-popover="">Deaths: -<span id="death">-</span></a></li>
+						<li class="navigation-item"><a class="navigation-link" href="#NaN" data-popover="">ROS World Tournament Win: <span id="ros"></span></a></li>
+					</ul>
 					</section>
 				</nav>
 				{{content}}
@@ -39,4 +40,22 @@
 				</footer>
 			</main>
 		</body>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event){
+				let death = 5
+				let ros = 7
+				let kill = 9
+			  window.setInterval(function(){
+			  	death+=1
+			  	ros+=1
+			  	kill+=1
+			    document.querySelector('#ros').innerText = ros
+			    document.querySelector('#kills').innerText = kill
+			    document.querySelector('#death').innerText = death
+			    document.querySelector('#ros1').innerText = ros
+			    document.querySelector('#kills1').innerText = kill
+			    document.querySelector('#death1').innerText = death
+			  }, 50);
+			});
+		</script>
 	</html>
